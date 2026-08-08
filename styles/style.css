@@ -4,7 +4,7 @@
   font-size: var(--font-size);
   line-height: var(--line-height);
   background-color: var(--background-color);
-  background-image: url(../images/cover-image-light.png);
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -40,28 +40,26 @@
   inline-size: 9px;
 }
 
-.header::before {
+.decorated-zone::before {
   content: '';
   position: absolute;
-  display: block;
+  width: 25px;
+  height: 25px;
+  align-self: flex-start;
+  justify-self: end;
   border-inline-end: 1px solid var(--menu-color);
   border-block-start: 1px solid var(--menu-color);
-  block-size: 25px;
-  inline-size: 25px;
-  inset-inline-end: var(--general-padding);
-  inset-block-start: var(--general-padding);
 }
 
-.header::after {
+.decorated-zone::after {
   content: '';
   position: absolute;
-  display: block;
+  width: 25px;
+  height: 25px;
+  justify-self: start;
+  align-self: flex-end;
   border-inline-start: 1px solid var(--menu-color);
   border-block-end: 1px solid var(--menu-color);
-  block-size: 25px;
-  inline-size: 25px;
-  inset-inline-start: var(--general-padding);
-  inset-block-end: var(--general-padding);
 }
 
 .header__theme-menu {
@@ -162,9 +160,6 @@
   outline: 1px solid var(--text-color);
 }
 
-.main__section.gallery {
-  grid-template-rows: auto 142px 355px 237px 355px 237px;
-}
 
 .gallery-image {
   inline-size: 100%;
@@ -180,28 +175,10 @@
 
 .footer {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding: var(--general-padding);
+  /*grid-template-rows: auto 1fr auto;*/
+  align-self: center;
+  /*padding: var(--general-padding);*/
   block-size: max(100vb, 668px);
-}
-
-.footer::before {
-  content: '';
-  display: block;
-  justify-self: end;
-  border-inline-end: 1px solid var(--menu-color);
-  border-block-start: 1px solid var(--menu-color);
-  block-size: 25px;
-  inline-size: 25px;
-}
-
-.footer::after {
-  content: '';
-  display: block;
-  border-inline-start: 1px solid var(--menu-color);
-  border-block-end: 1px solid var(--menu-color);
-  block-size: 25px;
-  inline-size: 25px;
 }
 
 .footer .decorations {
@@ -223,7 +200,9 @@
       --menu-margin: 172px;
       --promo-margin: 162px;
     }
-  }
+  } /*с примечанием о размещени данных переменных в файле с переменными не согласна, 
+  так как они там есть. 
+  Здесь - перебиваются значения переменных в зависимости от экрана*/
 
   :root {
     --general-padding: 20px;
@@ -291,11 +270,6 @@
 
   .header__theme-menu-list {
     flex-direction: row;
-  }
-
-  .header .decorations,
-  .footer .decorations {
-    text-shadow: 4px 4px 0px #ff0070;
   }
 
   .header__promo {

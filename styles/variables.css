@@ -1,5 +1,6 @@
 :root {
   --background-color: #fff1f7;
+  --background-image: url(../images/cover-image-light.png);
   --accent-color: #ff8dcb;
   --heading-color: #ffc2e6;
   --text-color: #353430;
@@ -18,4 +19,9 @@
   --display-bulb: none;
 }
 
+
+/*Тут назначены цвета светлой темы так как я отталкивалась от 
+верстки: сначала белый, в файле index.html у меня так же в 
+первую очередь выставлен light
+(примечание к замечанию 1 в файле dark.css)*/
 

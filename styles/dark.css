@@ -9,15 +9,14 @@
     --title-decor-color: #000028;
     --title-color: #ff0070;
     --display-bulb: flex;
+    --background-image: url(../images/cover-image-dark.png);
   }
+}
+/*Именно по причине того что я отталкивалась от верстки: 
+сначала светлая тема, на случай выставления авто использован код выше
+(примечание к замечанию 4 в файле dark.css)*/
 
-  .page {
-    background-image: url(../images/cover-image-dark.png);
-  }
-}/*Так как кнопки не работают при любой вариации подключения файла css, оставлен вариант, напрямую реагирующий на тему пользователя. 
-В дневном варианте не прописывается, так как светлая - тема по умолчанию и включается сразу как пользователь выключит темную тему у себя.*/
-
-.page.theme_dark {
+:root.theme_dark {
   --background-color: #000028;
   --accent-color: #ff0070;
   --heading-color: #db00ff;
@@ -27,12 +26,6 @@
   --title-decor-color: #000028;
   --title-color: #ff0070;
   --display-bulb: flex;
-  background-image: url(../images/cover-image-dark.png);
+  --background-image: url(../images/cover-image-dark.png);
 }
 
-:root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
-}
